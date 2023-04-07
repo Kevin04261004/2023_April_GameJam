@@ -26,16 +26,16 @@ public class SpawnWave : MonoBehaviour
         {
             case 1:
                 GameManager.instance.objectpool.Get(1, point[1]);
-                GameManager.instance.objectpool.Get(1, point[2]);
+                GameManager.instance.objectpool.Get(3, point[2]);
                 break;
             case 2:
-                GameManager.instance.objectpool.Get(1, point[3]);
+                GameManager.instance.objectpool.Get(3, point[3]);
                 GameManager.instance.objectpool.Get(1, point[5]);
                 break;
             case 3:
                 GameManager.instance.objectpool.Get(1, point[1]);
-                GameManager.instance.objectpool.Get(1, point[2]);
-                GameManager.instance.objectpool.Get(1, point[3]);
+                GameManager.instance.objectpool.Get(3, point[2]);
+                GameManager.instance.objectpool.Get(2, point[3]);
                 GameManager.instance.objectpool.Get(1, point[4]);
                 break;
             default:

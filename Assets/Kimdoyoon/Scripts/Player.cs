@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
     {
         return CurHp;
     }
+    public Transform GetBullets()
+    {
+        return Bullets;
+    }
     public void HpDown(int _howMuch = 1)
     {
         CurHp -= _howMuch;

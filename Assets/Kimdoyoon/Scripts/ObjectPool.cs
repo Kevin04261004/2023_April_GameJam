@@ -34,9 +34,14 @@ public class ObjectPool : MonoBehaviour
             select = Instantiate(prefabs[index], transform);
             pools[index].Add(select);
         }
-
         select.transform.parent = parent.transform;
         select.transform.position = parent.transform.position;
+        if (index == 0)
+        {
+            //float VectorZ = GameManager.instance.player.GetBullets().childCount;
+            select.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            //select.transform.position = new Vector3(select.transform.position.x, select.transform.position.y, VectorZ);
+        }
         return select;
     }
 

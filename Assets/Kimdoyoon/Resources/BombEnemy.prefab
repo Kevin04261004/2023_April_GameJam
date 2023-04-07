@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5730998320983524772}
   - component: {fileID: 5730998320983524775}
   - component: {fileID: 5730998320983524774}
-  - component: {fileID: 5730998320983524768}
+  - component: {fileID: 6719298113865447456}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: BombEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5730998320983524768
+--- !u!114 &6719298113865447456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5730998320983524795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9d2a3c052495de44b2aaa508f1301fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d5cd2b9016755f41acb8bc0c36d561e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 0
