@@ -47,10 +47,13 @@ MonoBehaviour:
   Bullets: {fileID: 5255517201227128153}
   Speed: 500
   CantShootTime: 0
+  CanActiveTime: 0
   firstPos: {x: 0, y: 0}
   secondPos: {x: 0, y: 0}
   timeDelay: 0
-  gap: {x: 0, y: 0}
+  gap: {x: 0, y: 0, z: 0}
+  ballPreview: {fileID: 0}
+  ballLineRenderer: {fileID: 0}
 --- !u!1 &5255517202480320460
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +132,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5033872, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
