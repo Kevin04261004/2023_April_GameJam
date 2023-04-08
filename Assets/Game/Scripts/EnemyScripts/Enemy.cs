@@ -30,7 +30,11 @@ public class Enemy : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        HpDown();
+        if(collision.gameObject.CompareTag("Ball"))
+        {
+            HpDown();
+            GameManager.instance.effectSoundManager.PopPlay();
+        }
     }
     public void MoveDown()
     {

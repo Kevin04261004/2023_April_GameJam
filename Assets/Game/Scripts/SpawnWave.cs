@@ -47,5 +47,6 @@ public class SpawnWave : MonoBehaviour
             default:
                 break;
         }
+        GameManager.instance.pathFind.StartFinding();
     }
 }

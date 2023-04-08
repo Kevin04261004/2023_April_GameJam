@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private int Health =3;
+    private int MaxHp =3;
     [SerializeField]
     private int CurHp = 3;
     [SerializeField]
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        CurHp = Health;
+        CurHp = MaxHp;
     }
     private void Start()
     {
@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
     {
         MouseOnPlayer(); //캐릭터 이동.
     }
+    public int GetMaxHp()
+    {
+        return MaxHp;
+    }
     public int GetCurHp()
     {
         return CurHp;
@@ -31,17 +35,24 @@ public class Player : MonoBehaviour
     {
         return Bullets;
     }
-    public void HpDown(int _howMuch = 1)
+    public void HpDown(int _howMuch = 1) // 체력 깍이기.
     {
-        CurHp -= _howMuch;
-        if(CurHp <=0)
+        if (CurHp-_howMuch <= 0)
         {
             Died();
+            CurHp -= _howMuch;
+            if(CurHp >-1)
+            {
+                GameManager.instance.UImanager.SetHp_Image();
+            }
+            return;
+
         }
+        CurHp -= _howMuch;
+        GameManager.instance.UImanager.SetHp_Image();
     }
     public void Died()
     {
-        Debug.Log("게임오버");
         GameManager.instance.UImanager.GameOverUI();
         Time.timeScale = 0;
     }

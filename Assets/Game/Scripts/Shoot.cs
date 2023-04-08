@@ -49,7 +49,6 @@ public class Shoot : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             firstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(-2.5f, -2.5f, 10);
-            print(firstPos);
             timeDelay = 0;
         }
 

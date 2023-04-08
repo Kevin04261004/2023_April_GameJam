@@ -9,4 +9,6 @@ public class GameManager : Singleton<GameManager>
     public Player player;
     public Shoot shoot;
     public UIManager UImanager;
+    public PathFind pathFind;
+    public EffectSoundManager effectSoundManager;
 }

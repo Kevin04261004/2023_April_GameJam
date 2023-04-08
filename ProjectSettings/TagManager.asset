@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Enemy
   - End
+  - Ball
   layers:
   - Default
   - TransparentFX
