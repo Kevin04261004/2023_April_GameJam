@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     public void Died()
     {
         Debug.Log("게임오버");
+        GameManager.instance.UImanager.GameOverUI();
+        Time.timeScale = 0;
     }
     public void MouseOnPlayer()
     {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class SpawnWave : MonoBehaviour
@@ -12,8 +13,13 @@ public class SpawnWave : MonoBehaviour
         GameManager.instance.objectpool.Get(1, point[0]);
         Turn = 0;
     }
-    public void TurnEnd()
+    public int GetTurn()
     {
+        return Turn;
+    }
+    public void TurnEnd() // 턴 오버 : 여기서 턴 엔드 이벤트 진행 << 추가할것들 여기서.
+    {
+        GameManager.instance.UImanager.SetStage();
         for(int i =0; i<point.Length;i++)
         {
             for(int j =0; j < point[i].childCount;j++)

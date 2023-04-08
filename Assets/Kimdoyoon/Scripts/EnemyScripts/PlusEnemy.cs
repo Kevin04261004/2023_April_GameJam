@@ -13,6 +13,6 @@ public class PlusEnemy : Enemy
     public override void Died()
     {
         base.Died();
-        GameManager.instance.objectpool.Get(0, Bullets) ;
+        GameManager.instance.objectpool.Get(0, Bullets);
     }
 }

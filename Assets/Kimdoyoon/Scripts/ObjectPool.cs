@@ -36,11 +36,10 @@ public class ObjectPool : MonoBehaviour
         }
         select.transform.parent = parent.transform;
         select.transform.position = parent.transform.position;
-        if (index == 0)
+        if (index == 0) // 공을 추가 할때 << 여기다가 추가.
         {
-            //float VectorZ = GameManager.instance.player.GetBullets().childCount;
             select.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            //select.transform.position = new Vector3(select.transform.position.x, select.transform.position.y, VectorZ);
+            GameManager.instance.UImanager.SetBallHowMuch();
         }
         return select;
     }

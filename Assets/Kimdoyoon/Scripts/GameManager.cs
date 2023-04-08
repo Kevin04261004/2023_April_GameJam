@@ -8,4 +8,5 @@ public class GameManager : Singleton<GameManager>
     public SpawnWave spawnWave;
     public Player player;
     public Shoot shoot;
+    public UIManager UImanager;
 }
