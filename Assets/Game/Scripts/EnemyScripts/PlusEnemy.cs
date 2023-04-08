@@ -10,6 +10,7 @@ public class PlusEnemy : Enemy
     {
         Bullets = GameObject.Find("Bullets(Gun)").transform;
     }
+    //플러스 벽돌은 파괴됬을때, 씨앗을 추가로 얻습니다.
     public override void Died()
     {
         base.Died();

@@ -7,17 +7,17 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI Stage_TMP; //SetStage()
+    private TextMeshProUGUI Stage_TMP; // SetStage()
     [SerializeField]
-    private Image[] Hp_Image; //
+    private Image[] Hp_Image; // GameOverUI()
     [SerializeField]
-    private TextMeshProUGUI Ball_TMP; //SetBallHowMuch()
+    private TextMeshProUGUI Ball_TMP; // SetBallHowMuch()
     [SerializeField]
-    private Button Setting_Btn;
+    private Button Setting_Btn; // 
     [SerializeField]
     private Image GameOverBackGround_Image; // GameOverSetTrue()
     [SerializeField]
-    private TextMeshProUGUI GameOver_MyScore_TMP;
+    private TextMeshProUGUI GameOver_MyScore_TMP; // GameOverUI()
     [SerializeField]
     private Button Retry_Btn;
     [SerializeField]
@@ -41,5 +41,9 @@ public class UIManager : MonoBehaviour
     {
         GameOverBackGround_Image.gameObject.SetActive(true);
         GameOver_MyScore_TMP.text = "Score : " + (GameManager.instance.spawnWave.GetTurn() + 1).ToString();
+    }
+    public void OnClickSetting_Btn()
+    {
+
     }
 }

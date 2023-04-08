@@ -7,6 +7,6 @@ public class BombEnemy : Enemy
     public override void Died()
     {
         base.Died();
-        // 주변 3*3에게 피해를 준다.
+        // 파괴 벽돌은 파괴 될때, 주변의 벽돌들이 사라집니다. << 나중에 상세 기획보면 될듯.
     }
 }
