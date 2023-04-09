@@ -5,11 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private int Hp;
+    protected int Hp;
     [SerializeField]
-    private int CoolTime;
+    protected int CoolTime = 3;
     [SerializeField]
-    private Vector2 ThisVec2;
+    protected Vector2 ThisVec2;
+    [SerializeField]
+    protected bool isSkillActive = false;
 
     private void OnEnable()
     {
@@ -28,6 +30,23 @@ public class Enemy : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public virtual void MoveDown()
+    {
+        gameObject.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 1);
+    }
+    public void CoolDown()
+    {
+        if(CoolTime == 0)
+        {
+            isSkillActive = false;
+            return;
+        }
+        CoolTime--;
+        if (CoolTime <= 0)
+        {
+            isSkillActive = false;
+        }
+    }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ball"))
@@ -35,10 +54,6 @@ public class Enemy : MonoBehaviour
             HpDown();
             GameManager.instance.effectSoundManager.PopPlay();
         }
-    }
-    public void MoveDown()
-    {
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 1);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

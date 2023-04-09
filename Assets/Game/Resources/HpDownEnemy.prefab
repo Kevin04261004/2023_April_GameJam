@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 0
-  CoolTime: 0
+  CoolTime: 3
   ThisVec2: {x: 0, y: 0}
-  player: {fileID: 5255517202480320499, guid: 5184948144b468340a4f42c7fb542b42, type: 3}
+  isSkillActive: 0
   damage: 1

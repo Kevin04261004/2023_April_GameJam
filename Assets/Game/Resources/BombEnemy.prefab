@@ -148,5 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 0
-  CoolTime: 0
+  CoolTime: 3
   ThisVec2: {x: 0, y: 0}
+  isSkillActive: 0
