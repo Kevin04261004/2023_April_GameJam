@@ -3074,6 +3074,10 @@ MonoBehaviour:
   - {fileID: 1721146062}
   - {fileID: 1191106812}
   Turn: 0
+  data: {fileID: 4900000, guid: d8ba839d9b6a38045a6a9812ba8c05d4, type: 3}
+  datas:
+    Stage: []
+  SpawnEnemy: 
 --- !u!1 &1305580887
 GameObject:
   m_ObjectHideFlags: 0
