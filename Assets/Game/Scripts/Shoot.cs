@@ -25,6 +25,8 @@ public class Shoot : MonoBehaviour
     private GameObject ballPreview;
     [SerializeField]
     private LineRenderer ballLineRenderer;
+    [SerializeField]
+    private bool activeChance;
     private void Update()
     {
         CanActiveTime = true;
@@ -103,6 +105,13 @@ public class Shoot : MonoBehaviour
             }
         }
         CantShootTime = false;
+
+        if (activeChance == true)
+        {
+            activeChance = false;
+            return;
+        }
+
         GameManager.instance.spawnWave.TurnEnd();
     }
     IEnumerator ShootAllBalls()
@@ -113,5 +122,10 @@ public class Shoot : MonoBehaviour
             Bullets.GetChild(i).GetComponent<Ball>().isMoving = true;
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    public void ActiveChance()
+    {
+        activeChance = true;
     }
 }

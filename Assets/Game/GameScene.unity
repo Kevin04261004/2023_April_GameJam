@@ -525,6 +525,8 @@ MonoBehaviour:
   - {fileID: 5730998320983524795, guid: 332f3e4399c04c74b89ec590c6dc8152, type: 3}
   - {fileID: 5730998320983524795, guid: 5c2fda2f108766c4d94c61ec25b82e0a, type: 3}
   - {fileID: 5730998320983524795, guid: f902d550ccc5d3e40a6382b227b7f4a3, type: 3}
+  - {fileID: 5295049116683253734, guid: c08d33cf17a9fae4890d52131631bfb9, type: 3}
+  - {fileID: 4157033594870564804, guid: 1d333adf4a4d9564f879c15029fb526f, type: 3}
 --- !u!4 &403048787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5971730491138085063, guid: e54bc9a0e51931c489f2508492cfb3a5,
@@ -5577,6 +5579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255517202480320499, guid: 5184948144b468340a4f42c7fb542b42,
+        type: 3}
+      propertyPath: CurHp
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5184948144b468340a4f42c7fb542b42, type: 3}
