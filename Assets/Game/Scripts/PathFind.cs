@@ -29,6 +29,7 @@ public class PathFind : MonoBehaviour
                     if (col.gameObject.CompareTag("Enemy")) isEnemy = true;
 
                 NodeArray[i, j] = new Node(isEnemy, i + bottomLeft.x, j + bottomLeft.y);
+                print("NodeArray" + i + ", " + j + ":  " + NodeArray[i, j].isEnemy + NodeArray[i, j].x + NodeArray[i, j].y);
             }
         }
     }

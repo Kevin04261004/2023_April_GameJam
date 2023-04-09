@@ -28,7 +28,8 @@ public class SpawnWave : MonoBehaviour
             }
         }
         Turn++;
-        switch (Turn) //스테이지 제작 가능.
+        switch (Turn) //스테이지 제작 가능. Get(생성할 블록, 생성할 위치)
+                      //1: 일반 블록, 2: 폭탄블록, 3: 더하기블록, 4:체력감소블록, 5: 행동블록
         {
             case 1:
                 GameManager.instance.objectpool.Get(1, point[1]);
@@ -42,6 +43,17 @@ public class SpawnWave : MonoBehaviour
                 GameManager.instance.objectpool.Get(1, point[1]);
                 GameManager.instance.objectpool.Get(3, point[2]);
                 GameManager.instance.objectpool.Get(2, point[3]);
+                GameManager.instance.objectpool.Get(1, point[4]);
+                break;
+            case 4:
+                GameManager.instance.objectpool.Get(2, point[0]);
+                GameManager.instance.objectpool.Get(5, point[2]);
+                GameManager.instance.objectpool.Get(4, point[3]);
+                GameManager.instance.objectpool.Get(1, point[4]);
+                break;
+            case 5:
+                GameManager.instance.objectpool.Get(2, point[0]);
+                GameManager.instance.objectpool.Get(4, point[3]);
                 GameManager.instance.objectpool.Get(1, point[4]);
                 break;
             default:
