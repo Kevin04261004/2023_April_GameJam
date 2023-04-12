@@ -106,7 +106,7 @@ public class Shoot : MonoBehaviour
         }
         CantShootTime = false;
 
-        if (activeChance == true)
+        if (activeChance)
         {
             activeChance = false;
             return;

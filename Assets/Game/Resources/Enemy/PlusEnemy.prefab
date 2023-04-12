@@ -365,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 0
   Hp: 0
-  CoolTime: 3
+  CoolTime: 100
   ThisVec2: {x: 0, y: 0}
   isSkillActive: 0
   BaseSprite: {fileID: 0}
