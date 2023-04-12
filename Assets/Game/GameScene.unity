@@ -3075,7 +3075,7 @@ MonoBehaviour:
   - {fileID: 1721146062}
   - {fileID: 1191106812}
   Turn: 0
-  data: {fileID: 4900000, guid: d8ba839d9b6a38045a6a9812ba8c05d4, type: 3}
+  data: {fileID: 4900000, guid: 5d1b03f3117485a468420073a3ed5acb, type: 3}
   datas:
     Stage: []
   SpawnEnemy: 
@@ -5013,18 +5013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0ca5dbd4d65f04b854df5e83efa8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 
-  point:
-  - {fileID: 1251256430}
-  - {fileID: 403048787}
-  - {fileID: 680474041}
-  - {fileID: 979547315}
-  - {fileID: 1721146062}
-  - {fileID: 1191106812}
-  Turn: 0
-  datas:
-    Stage: []
-  SpawnEnemy: 
 --- !u!1 &1963962698
 GameObject:
   m_ObjectHideFlags: 0
