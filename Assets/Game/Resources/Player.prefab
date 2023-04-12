@@ -54,6 +54,7 @@ MonoBehaviour:
   gap: {x: 0, y: 0, z: 0}
   ballPreview: {fileID: 0}
   ballLineRenderer: {fileID: 0}
+  activeChance: 0
 --- !u!1 &5255517202480320460
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c20df336555064490b4ccaed24c4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  MaxHp: 3
   CurHp: 3
   Bullets: {fileID: 5255517201227128153}
 --- !u!61 &5255517202480320496

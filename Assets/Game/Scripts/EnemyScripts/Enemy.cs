@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField]
+    protected int MaxHp;
     [SerializeField]
     protected int Hp;
     [SerializeField]
@@ -12,16 +16,26 @@ public class Enemy : MonoBehaviour
     protected Vector2 ThisVec2;
     [SerializeField]
     protected bool isSkillActive = false;
-
+    [SerializeField]
+    protected Sprite BaseSprite;
+    [SerializeField]
+    protected Slider HpBar;
+    [SerializeField]
+    protected TextMeshProUGUI Hp_TMP;
     private void OnEnable()
     {
+
         ThisVec2 = gameObject.transform.position;
         Hp = GameManager.instance.spawnWave.Turn;
+        MaxHp = Hp;
+        SetHpBarAndHp_TMP();
     }
+
     public void HpDown(int _HowMuch =1)
     {
         Hp -= _HowMuch;
-        if(Hp <= 0)
+        SetHpBarAndHp_TMP();
+        if (Hp <= 0)
         {
             Died();
         }
@@ -38,14 +52,28 @@ public class Enemy : MonoBehaviour
     {
         if(CoolTime == 0)
         {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             isSkillActive = false;
             return;
         }
         CoolTime--;
         if (CoolTime <= 0)
         {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             isSkillActive = false;
         }
+    }
+    public void SetHpBarAndHp_TMP()
+    {
+        if(Hp == 0)
+        {
+            HpBar.value = 1 / 1;
+            Hp_TMP.text = "1";
+            return;
+        }
+        
+        HpBar.value = (float)Hp / (float)MaxHp;
+        Hp_TMP.text = Hp.ToString();
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -63,4 +91,5 @@ public class Enemy : MonoBehaviour
             GameManager.instance.player.HpDown();
         }
     }
+
 }

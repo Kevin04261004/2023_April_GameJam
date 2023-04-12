@@ -8,6 +8,9 @@ public class ActiveEnemy : Enemy
     private void OnEnable()
     {
         isSkillActive = true;
+        Hp = GameManager.instance.spawnWave.Turn;
+        MaxHp = Hp;
+        SetHpBarAndHp_TMP();
     }
     public override void Died()
     {
