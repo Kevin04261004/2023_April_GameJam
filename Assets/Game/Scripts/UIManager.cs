@@ -52,9 +52,9 @@ public class UIManager : MonoBehaviour
     {
         Hp_Image[GameManager.instance.player.GetCurHp()].gameObject.SetActive(false);
     }
-    public void SetBallHowMuch()
+    public void SetBallHowMuch(int _HowMuch)
     {
-        Ball_TMP.text = "x " + GameManager.instance.player.GetBullets().childCount.ToString();
+        Ball_TMP.text = "x " + _HowMuch.ToString();
     }
     public void GameOverUI()
     {

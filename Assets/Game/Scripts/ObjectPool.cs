@@ -39,7 +39,8 @@ public class ObjectPool : MonoBehaviour
         if (index == 0) // 공을 추가 할때 << 여기다가 추가.
         {
             select.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GameManager.instance.UImanager.SetBallHowMuch();
+            GameManager.instance.player.Bullet++;
+            GameManager.instance.UImanager.SetBallHowMuch(GameManager.instance.player.Bullet);
         }
         return select;
     }

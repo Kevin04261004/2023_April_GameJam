@@ -22,6 +22,10 @@ public class Enemy : MonoBehaviour
     protected Slider HpBar;
     [SerializeField]
     protected TextMeshProUGUI Hp_TMP;
+    [SerializeField]
+    protected TextMeshProUGUI Turn_TMP;
+    [SerializeField]
+    protected Image Turn_Image;
     private void OnEnable()
     {
 
@@ -29,6 +33,7 @@ public class Enemy : MonoBehaviour
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
         SetHpBarAndHp_TMP();
+        SetTurn_TMP();
     }
 
     public void HpDown(int _HowMuch =1)
@@ -53,6 +58,7 @@ public class Enemy : MonoBehaviour
         if(CoolTime == 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            Turn_Image.gameObject.SetActive(false);
             isSkillActive = false;
             return;
         }
@@ -60,8 +66,10 @@ public class Enemy : MonoBehaviour
         if (CoolTime <= 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            Turn_Image.gameObject.SetActive(false);
             isSkillActive = false;
         }
+        SetTurn_TMP();
     }
     public void SetHpBarAndHp_TMP()
     {
@@ -74,6 +82,10 @@ public class Enemy : MonoBehaviour
         
         HpBar.value = (float)Hp / (float)MaxHp;
         Hp_TMP.text = Hp.ToString();
+    }
+    public void SetTurn_TMP()
+    {
+        Turn_TMP.text = CoolTime.ToString();
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {

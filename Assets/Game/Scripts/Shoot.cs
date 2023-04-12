@@ -105,7 +105,7 @@ public class Shoot : MonoBehaviour
             }
         }
         CantShootTime = false;
-
+        GameManager.instance.player.SetBulletToMaxBullet();
         if (activeChance)
         {
             activeChance = false;
@@ -118,6 +118,8 @@ public class Shoot : MonoBehaviour
     {
         for (int i = 0; i < Bullets.childCount; i++) 
         {
+            GameManager.instance.player.Bullet--;
+            GameManager.instance.UImanager.SetBallHowMuch(GameManager.instance.player.Bullet);
             Bullets.GetChild(i).GetComponent<Rigidbody2D>().AddForce(gap.normalized * Speed);//속력 똑같이 해서 날리기
             Bullets.GetChild(i).GetComponent<Ball>().isMoving = true;
             yield return new WaitForSeconds(0.1f);

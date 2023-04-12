@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private int MaxHp =3;
     [SerializeField]
     private int CurHp = 3;
+    public int Bullet;
     [SerializeField]
     private Transform Bullets;
 
@@ -73,5 +74,10 @@ public class Player : MonoBehaviour
                 }
 
         }
+    }
+    public void SetBulletToMaxBullet()
+    {
+        Bullet = Bullets.childCount;
+        GameManager.instance.UImanager.SetBallHowMuch(Bullet);
     }
 }

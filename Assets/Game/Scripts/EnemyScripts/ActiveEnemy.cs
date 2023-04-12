@@ -11,6 +11,7 @@ public class ActiveEnemy : Enemy
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
         SetHpBarAndHp_TMP();
+        SetTurn_TMP();
     }
     public override void Died()
     {
