@@ -11,9 +11,11 @@ public class Player : MonoBehaviour
     public int Bullet;
     [SerializeField]
     private Transform Bullets;
-
+    [SerializeField]
+    private Animator animator;
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         CurHp = MaxHp;
     }
     private void Start()
@@ -54,6 +56,12 @@ public class Player : MonoBehaviour
     }
     public void Died()
     {
+        animator.SetBool("isPlayerDie", true);
+        StartCoroutine(DiedCoroutine());
+    }
+    IEnumerator DiedCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
         GameManager.instance.UImanager.GameOverUI();
         Time.timeScale = 0;
     }
