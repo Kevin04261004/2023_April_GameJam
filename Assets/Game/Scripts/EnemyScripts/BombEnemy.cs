@@ -10,6 +10,9 @@ public class BombEnemy : Enemy
         isSkillActive = true;
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
+        CurCoolTime = CoolTime;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+        Turn_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();
     }

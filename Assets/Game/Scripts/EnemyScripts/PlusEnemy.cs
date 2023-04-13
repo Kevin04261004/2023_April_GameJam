@@ -12,6 +12,9 @@ public class PlusEnemy : Enemy
         isSkillActive = true;
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
+        CurCoolTime = CoolTime;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        Turn_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();
         Turn_Image.gameObject.SetActive(false);

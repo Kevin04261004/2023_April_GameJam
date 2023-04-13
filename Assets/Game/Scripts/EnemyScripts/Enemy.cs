@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected int Hp;
     [SerializeField]
+    protected int CurCoolTime;
+    [SerializeField]
     protected int CoolTime = 3;
     [SerializeField]
     protected Vector2 ThisVec2;
@@ -32,8 +34,12 @@ public class Enemy : MonoBehaviour
         ThisVec2 = gameObject.transform.position;
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
+        CurCoolTime = CoolTime;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        Turn_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();
+        Turn_Image.gameObject.SetActive(false);
     }
 
     public void HpDown(int _HowMuch =1)
@@ -55,15 +61,15 @@ public class Enemy : MonoBehaviour
     }
     public void CoolDown()
     {
-        if(CoolTime == 0)
+        if(CurCoolTime == 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             Turn_Image.gameObject.SetActive(false);
             isSkillActive = false;
             return;
         }
-        CoolTime--;
-        if (CoolTime <= 0)
+        CurCoolTime--;
+        if (CurCoolTime <= 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             Turn_Image.gameObject.SetActive(false);
@@ -85,7 +91,7 @@ public class Enemy : MonoBehaviour
     }
     public void SetTurn_TMP()
     {
-        Turn_TMP.text = CoolTime.ToString();
+        Turn_TMP.text = CurCoolTime.ToString();
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {

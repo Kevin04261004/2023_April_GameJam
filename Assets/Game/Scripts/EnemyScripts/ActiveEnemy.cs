@@ -10,6 +10,9 @@ public class ActiveEnemy : Enemy
         isSkillActive = true;
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
+        CurCoolTime = CoolTime;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        Turn_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();
     }

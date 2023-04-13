@@ -12,6 +12,9 @@ public class HpDownEnemy : Enemy
         isSkillActive = true;
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
+        CurCoolTime = CoolTime;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        Turn_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();
     }
