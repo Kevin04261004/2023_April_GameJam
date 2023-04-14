@@ -19,7 +19,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected bool isSkillActive = false;
     [SerializeField]
+    protected Image image;
+    [SerializeField]
     protected Sprite BaseSprite;
+    [SerializeField]
+    protected Sprite RealSprite;
     [SerializeField]
     protected Slider HpBar;
     [SerializeField]
@@ -35,7 +39,6 @@ public class Enemy : MonoBehaviour
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
         CurCoolTime = CoolTime;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         Turn_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();
@@ -63,7 +66,7 @@ public class Enemy : MonoBehaviour
     {
         if(CurCoolTime == 0)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            gameObject.GetComponent<SpriteRenderer>().sprite = BaseSprite;
             Turn_Image.gameObject.SetActive(false);
             isSkillActive = false;
             return;
@@ -71,7 +74,7 @@ public class Enemy : MonoBehaviour
         CurCoolTime--;
         if (CurCoolTime <= 0)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            gameObject.GetComponent<SpriteRenderer>().sprite = BaseSprite;
             Turn_Image.gameObject.SetActive(false);
             isSkillActive = false;
         }

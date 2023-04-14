@@ -13,7 +13,7 @@ public class PlusEnemy : Enemy
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
         CurCoolTime = CoolTime;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        gameObject.GetComponent<SpriteRenderer>().sprite = RealSprite;
         Turn_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();

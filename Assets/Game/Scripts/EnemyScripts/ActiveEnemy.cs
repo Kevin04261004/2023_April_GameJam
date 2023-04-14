@@ -11,7 +11,7 @@ public class ActiveEnemy : Enemy
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
         CurCoolTime = CoolTime;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        gameObject.GetComponent<SpriteRenderer>().sprite = RealSprite;
         Turn_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();
