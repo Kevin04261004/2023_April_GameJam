@@ -75,7 +75,7 @@ public class Shoot : MonoBehaviour
                 return;
             }
             gap = (secondPos - firstPos).normalized;
-            gap = new Vector3(gap.y >= 0 ? gap.x : gap.x >= 0 ? 1 : -1, Mathf.Clamp(gap.y, 0.2f, 1), 0);
+            gap = new Vector3(gap.y >= 0 ? gap.x : gap.x >= 0 ? 1 : -1, Mathf.Clamp(gap.y, 0.2f, 1), 0); //
 
             ballPreview.gameObject.SetActive(true);
             ballPreview.transform.position =
@@ -113,23 +113,44 @@ public class Shoot : MonoBehaviour
             activeChance = false;
             return;
         }
-
         GameManager.instance.spawnWave.TurnEnd();
     }
+    //IEnumerator ShootAllBalls()
+    //{
+    //    for (int i = 0; i < Bullets.childCount; i++) 
+    //    {
+    //        animator.SetBool("isShooting", true);
+    //        GameManager.instance.player.Bullet--;
+    //        GameManager.instance.UImanager.SetBallHowMuch(GameManager.instance.player.Bullet);
+    //        Bullets.GetChild(i).GetComponent<Rigidbody2D>().AddForce(gap.normalized * Speed);//속력 똑같이 해서 날리기
+    //        Bullets.GetChild(i).GetComponent<Ball>().isMoving = true;
+    //        yield return new WaitForSeconds(0.1f);
+    //    }
+    //    yield return new WaitForEndOfFrame();
+    //    animator.SetBool("isShooting", false);
+    //}
     IEnumerator ShootAllBalls()
     {
-        for (int i = 0; i < Bullets.childCount; i++) 
+        for (int i = 0; i < Bullets.childCount; i++)
         {
             animator.SetBool("isShooting", true);
             GameManager.instance.player.Bullet--;
             GameManager.instance.UImanager.SetBallHowMuch(GameManager.instance.player.Bullet);
-            Bullets.GetChild(i).GetComponent<Rigidbody2D>().AddForce(gap.normalized * Speed);//속력 똑같이 해서 날리기
+            Rigidbody2D bulletRigidbody = Bullets.GetChild(i).GetComponent<Rigidbody2D>();
+            if (gap != Vector3.zero)
+            {
+                Quaternion rotation = Quaternion.LookRotation(Vector3.forward, gap.normalized);
+                Bullets.GetChild(i).transform.rotation = rotation;
+            }
+            Vector3 velocity = new Vector3(gap.x, gap.y, 1f).normalized * Speed; 
+            bulletRigidbody.velocity = velocity;
             Bullets.GetChild(i).GetComponent<Ball>().isMoving = true;
             yield return new WaitForSeconds(0.1f);
         }
         yield return new WaitForEndOfFrame();
         animator.SetBool("isShooting", false);
     }
+
 
     public void ActiveChance()
     {

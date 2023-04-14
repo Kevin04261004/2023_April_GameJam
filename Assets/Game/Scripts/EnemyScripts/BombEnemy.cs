@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombEnemy : Enemy
 {
     private Collider2D[] collider2Ds;
-    private void OnEnable()
+    public void OnEnable()
     {
         isSkillActive = true;
         Hp = GameManager.instance.spawnWave.Turn;
