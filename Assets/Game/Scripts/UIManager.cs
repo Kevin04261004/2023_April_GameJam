@@ -31,6 +31,14 @@ public class UIManager : MonoBehaviour
     private Button Exit_No_Btn; // OnClickExit_No()
     [SerializeField]
     private Button Exit_Yes_Btn; // OnClickExit_Yes()
+    private void Awake()
+    {
+#if UNITY_STANDALONE_WIN
+        Screen.SetResolution(1080, 1920, false);
+#elif UNITY_ANDROID
+        Screen.SetResolution(1080, 1920, false);
+#endif
+    }
     private void Start()
     {
         Time.timeScale = 1;
@@ -39,7 +47,7 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             OnClickExit_Btn();
         }
