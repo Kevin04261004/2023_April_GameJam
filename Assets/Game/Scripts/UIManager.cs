@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI Stage_TMP; // SetStage()
     [SerializeField]
-    private Image[] Hp_Image; // 
+    private Image[] Hp_Image; // SetHp_Image()
     [SerializeField]
     private TextMeshProUGUI Ball_TMP; // SetBallHowMuch()
     [SerializeField]
@@ -73,26 +73,32 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         OptionBackGround_Image.gameObject.SetActive(true);
+        GameManager.instance.effectSoundManager.ClickButtonPoP();
     }
     public void OnClick_Setting_Retry_Btn()
     {
         SceneManager.LoadScene("GameScene");
+        GameManager.instance.effectSoundManager.ClickButtonPoP();
     }
     public void OnClickSetting_Continue_Btn()
     {
         Time.timeScale = 1;
         OptionBackGround_Image.gameObject.SetActive(false);
+        GameManager.instance.effectSoundManager.ClickButtonPoP();
     }
     public void OnClickExit_Btn()
     {
         RealExitBackGround_Image.gameObject.SetActive(true);
+        GameManager.instance.effectSoundManager.ClickButtonPoP();
     }
     public void OnClickExit_Yes()
     {
         Application.Quit();
+        GameManager.instance.effectSoundManager.ClickButtonPoP();
     }
     public void OnClickExit_No()
     {
         RealExitBackGround_Image.gameObject.SetActive(false);
+        GameManager.instance.effectSoundManager.ClickButtonPoP();
     }
 }

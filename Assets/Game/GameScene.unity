@@ -301,7 +301,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -378,7 +378,7 @@ RectTransform:
   - {fileID: 466449806}
   - {fileID: 563956449}
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1081,7 +1081,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1293,8 +1293,8 @@ RectTransform:
   m_Father: {fileID: 1604175676}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1432,7 +1432,7 @@ GameObject:
   - component: {fileID: 523090790}
   - component: {fileID: 523090789}
   m_Layer: 5
-  m_Name: Image
+  m_Name: StageBackGround_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1452,11 +1452,11 @@ RectTransform:
   m_Children:
   - {fileID: 1401790832}
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 40, y: 97}
+  m_AnchoredPosition: {x: 0, y: 97}
   m_SizeDelta: {x: 380, y: 380}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &523090789
@@ -1916,7 +1916,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2465,8 +2465,8 @@ RectTransform:
   m_Father: {fileID: 1975106557}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2559,8 +2559,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a5e7b181bc29e468ee2067fadf8671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioclip: {fileID: 8300000, guid: 2f3ad3b9ff2463c479de7e3b49716c44, type: 3}
-  POP: {fileID: 1016338007}
+  audioSource: {fileID: 1016338007}
+  pop_Audio: {fileID: 8300000, guid: 2f3ad3b9ff2463c479de7e3b49716c44, type: 3}
+  ClickButtonpop_Audio: {fileID: 8300000, guid: 8d8ce8198fdf2c64795246ed180cce27,
+    type: 3}
+  EffectSoundSlider: {fileID: 1963962700}
 --- !u!82 &1016338007
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2702,8 +2705,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fe5618b7cad17449e7b0c0b7dae226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioclip: {fileID: 8300000, guid: ea5478af5e493a44caaef536c508249c, type: 3}
-  BGM: {fileID: 1077121437}
+  BGM: {fileID: 8300000, guid: ea5478af5e493a44caaef536c508249c, type: 3}
+  Dead_BGM: {fileID: 8300000, guid: 855f0e035faef604985e544d8787ecf1, type: 3}
+  audioSource: {fileID: 1077121437}
+  BGMSlider: {fileID: 1712825370}
 --- !u!82 &1077121437
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2831,7 +2836,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3758,7 +3763,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4167,15 +4172,15 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1362419926}
-  - {fileID: 493059588}
-  - {fileID: 1108081269}
   - {fileID: 662674016}
   - {fileID: 195618429}
   - {fileID: 1582762322}
   - {fileID: 1983566454}
   - {fileID: 1605931251}
   - {fileID: 523090788}
+  - {fileID: 1362419926}
+  - {fileID: 493059588}
+  - {fileID: 1108081269}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4425,7 +4430,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4770,7 +4775,7 @@ RectTransform:
   m_Children:
   - {fileID: 1752311722}
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5019,7 +5024,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1605931252
 MonoBehaviour:
@@ -5292,7 +5297,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5534,7 +5539,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5780,7 +5785,7 @@ RectTransform:
   m_Children:
   - {fileID: 1333693966}
   m_Father: {fileID: 1407074676}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5877,6 +5882,7 @@ MonoBehaviour:
   UImanager: {fileID: 209450546}
   pathFind: {fileID: 1137033705}
   effectSoundManager: {fileID: 1016338006}
+  bgmManager: {fileID: 1077121436}
 --- !u!1001 &135858617818181619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13748,6 +13754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bullets(Gun)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255517201227128153, guid: 5184948144b468340a4f42c7fb542b42,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5255517201227128158, guid: 5184948144b468340a4f42c7fb542b42,
         type: 3}

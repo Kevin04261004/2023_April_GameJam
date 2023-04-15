@@ -11,4 +11,5 @@ public class GameManager : Singleton<GameManager>
     public UIManager UImanager;
     public PathFind pathFind;
     public EffectSoundManager effectSoundManager;
+    public BGM_Manager bgmManager;
 }

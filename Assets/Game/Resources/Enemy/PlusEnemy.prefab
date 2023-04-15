@@ -448,7 +448,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5669db0c4db22147a77ac1182f73d1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b856c34eb8de32a49ac33d45cf193a1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -525,8 +525,8 @@ MonoBehaviour:
   ThisVec2: {x: 0, y: 0}
   isSkillActive: 0
   image: {fileID: 0}
-  BaseSprite: {fileID: 21300000, guid: c3407002353c6c34db0720a8cf499f09, type: 3}
-  RealSprite: {fileID: 21300000, guid: e5669db0c4db22147a77ac1182f73d1b, type: 3}
+  BaseSprite: {fileID: 21300000, guid: 93938aa43d691974f9c85939ab999d6a, type: 3}
+  RealSprite: {fileID: 21300000, guid: b856c34eb8de32a49ac33d45cf193a1c, type: 3}
   HpBar: {fileID: 7459193840838645129}
   Hp_TMP: {fileID: 6402649331731931766}
   Turn_TMP: {fileID: 1419043196515855998}

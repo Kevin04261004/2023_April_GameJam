@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
     }
     public void Died()
     {
+        GameManager.instance.bgmManager.DeadBGMPlay();
         animator.SetBool("isPlayerDie", true);
         StartCoroutine(DiedCoroutine());
     }
