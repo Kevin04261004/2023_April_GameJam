@@ -74,7 +74,6 @@ public class Player : MonoBehaviour
             float mouseY = Input.mousePosition.y;
 
             Vector2 point = Camera.main.ScreenToWorldPoint(new Vector2(mouseX, mouseY));
-            print(Camera.main.ScreenToWorldPoint(new Vector2(mouseX, mouseY)));
             foreach (Collider2D col in Physics2D.OverlapBoxAll(point, new Vector2(0.2f, 0.2f),0))
                 if (col.gameObject == this.gameObject)
                 {

@@ -7,9 +7,9 @@ public class EffectSoundManager : MonoBehaviour
     [SerializeField]
     private AudioClip audioclip;
     [SerializeField]
-    private AudioSource Pop;
+    private AudioSource POP;
     public void PopPlay()
     {
-        Pop.PlayOneShot(audioclip);
+        POP.PlayOneShot(audioclip);
     }
 }
