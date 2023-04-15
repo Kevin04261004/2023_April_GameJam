@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private Transform Bullets;
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private int myPoint = 0;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -26,6 +28,10 @@ public class Player : MonoBehaviour
     {
         MouseOnPlayer(); //캐릭터 이동.
     }
+    public int GetmyPoint()
+    {
+        return myPoint;
+    }
     public int GetMaxHp()
     {
         return MaxHp;
@@ -37,6 +43,10 @@ public class Player : MonoBehaviour
     public Transform GetBullets()
     {
         return Bullets;
+    }
+    public void myPointUp(int _howMuch = 1)
+    {
+        myPoint += _howMuch;
     }
     public void HpDown(int _howMuch = 1) // 체력 깍이기.
     {

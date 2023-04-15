@@ -32,6 +32,11 @@ public class Ball : MonoBehaviour
     {
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, rigid.velocity.normalized);
         gameObject.transform.rotation = rotation;
+
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            GameManager.instance.player.myPointUp(1);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

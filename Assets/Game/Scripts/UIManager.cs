@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
     public void GameOverUI()
     {
         GameOverBackGround_Image.gameObject.SetActive(true);
-        GameOver_MyScore_TMP.text = "Score : " + (GameManager.instance.spawnWave.GetTurn() + 1).ToString();
+        GameOver_MyScore_TMP.text = "Score : " + (GameManager.instance.player.GetmyPoint()+1).ToString();
     }
     public void OnClickSetting_Btn()
     {
