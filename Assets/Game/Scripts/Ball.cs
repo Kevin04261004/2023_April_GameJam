@@ -12,6 +12,13 @@ public class Ball : MonoBehaviour
         Bullets = GameObject.Find("Bullets(Gun)");
         rigid = GetComponent<Rigidbody2D>();
     }
+    public void Update()
+    {
+        if(!isMoving)
+        {
+            gameObject.transform.position = Bullets.transform.position;
+        }
+    }
     public void isMovingTrue()
     {
         if(isMoving)
@@ -32,6 +39,7 @@ public class Ball : MonoBehaviour
         {
             isMoving = false;
             gameObject.transform.position = Bullets.transform.position;
+            gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
     }

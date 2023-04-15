@@ -69,16 +69,17 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && GameManager.instance.shoot.GetCanActiveTime())
         {
+
             float mouseX = Input.mousePosition.x;
             float mouseY = Input.mousePosition.y;
 
             Vector2 point = Camera.main.ScreenToWorldPoint(new Vector2(mouseX, mouseY));
-
+            print(Camera.main.ScreenToWorldPoint(new Vector2(mouseX, mouseY)));
             foreach (Collider2D col in Physics2D.OverlapBoxAll(point, new Vector2(0.2f, 0.2f),0))
                 if (col.gameObject == this.gameObject)
                 {
-                    if (point.x > 0.1 && point.x < 4.9) 
-                        col.gameObject.transform.position = new Vector3(point.x,-2,0);
+                    if (point.x > -5.25 && point.x < 0) 
+                        col.gameObject.transform.position = new Vector3(point.x,gameObject.transform.position.y,0);
                 }
 
         }

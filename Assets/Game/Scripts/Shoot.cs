@@ -60,7 +60,7 @@ public class Shoot : MonoBehaviour
         timeDelay += Time.deltaTime;
         if (timeDelay < 0.3f) return;
         bool isMouse = Input.GetMouseButton(0);
-        if (Input.mousePosition.y <= 180)// 플레이어 움직일때는 리턴, y가 일정 거리 아래로 내려가면 미리보여주는 라인렌더러 0으로 초기화.
+        if (Input.mousePosition.y <= 400)// 플레이어 움직일때는 리턴, y가 일정 거리 아래로 내려가면 미리보여주는 라인렌더러 0으로 초기화.
         {
             ballPreview.gameObject.SetActive(false);
             ballLineRenderer.SetPosition(0, Vector3.zero);
@@ -78,12 +78,12 @@ public class Shoot : MonoBehaviour
             gap = new Vector3(gap.y >= 0 ? gap.x : gap.x >= 0 ? 1 : -1, Mathf.Clamp(gap.y, 0.2f, 1), 0); //
 
             ballPreview.gameObject.SetActive(true);
-            ballPreview.transform.position =
-               Physics2D.CircleCast(new Vector2(Mathf.Clamp(gameObject.transform.position.x, -0.5f, 5.5f), -1f), 0.15f, gap, 10000, 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("Enemy")).centroid; // 1.8
+            
 
             RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, gap, 10000, 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("Enemy"));
 
             ballLineRenderer.SetPosition(0, gameObject.transform.position);
+            ballPreview.transform.position = (Vector3)hit.point - gap * 0.25f;
             ballLineRenderer.SetPosition(1, (Vector3)hit.point - gap * 0.25f);
         }
 
