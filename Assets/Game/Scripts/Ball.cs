@@ -43,6 +43,14 @@ public class Ball : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("End") && isMoving)
         {
+            if (GameManager.instance.shoot.isEnd == false)
+            {
+                Vector3 playerPos = GameManager.instance.player.transform.position;
+                playerPos.x = gameObject.transform.position.x;
+                GameManager.instance.player.transform.position = playerPos;
+                GameManager.instance.shoot.isEnd = true;
+            }
+
             isMoving = false;
             gameObject.transform.position = Bullets.transform.position;
             gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);

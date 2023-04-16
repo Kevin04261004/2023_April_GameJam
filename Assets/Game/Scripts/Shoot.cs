@@ -26,9 +26,8 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private LineRenderer ballLineRenderer;
     [SerializeField]
-    private bool activeChance;
-    [SerializeField]
     private Animator animator;
+    public bool isEnd = false;
     private void Update()
     {
         CanActiveTime = true;
@@ -94,6 +93,8 @@ public class Shoot : MonoBehaviour
             ballLineRenderer.SetPosition(0, Vector3.zero);
             ballLineRenderer.SetPosition(1, Vector3.zero);
             CantShootTime = true;
+            isEnd = false;
+            GameManager.instance.player.InActiveChance();
         }
         ballPreview.SetActive(isMouse);
     }
@@ -108,11 +109,6 @@ public class Shoot : MonoBehaviour
         }
         CantShootTime = false;
         GameManager.instance.player.SetBulletToMaxBullet();
-        if (activeChance)
-        {
-            activeChance = false;
-            return;
-        }
         GameManager.instance.spawnWave.TurnEnd();
     }
     //IEnumerator ShootAllBalls()
@@ -149,11 +145,5 @@ public class Shoot : MonoBehaviour
         }
         yield return new WaitForEndOfFrame();
         animator.SetBool("isShooting", false);
-    }
-
-
-    public void ActiveChance()
-    {
-        activeChance = true;
     }
 }

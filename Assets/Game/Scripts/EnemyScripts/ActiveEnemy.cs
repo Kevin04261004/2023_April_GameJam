@@ -21,7 +21,7 @@ public class ActiveEnemy : Enemy
         base.Died();
         if (isSkillActive)
         {
-            GameManager.instance.shoot.ActiveChance();
+            GameManager.instance.player.ActiveChance();
         }
     }
     public override void MoveDown()

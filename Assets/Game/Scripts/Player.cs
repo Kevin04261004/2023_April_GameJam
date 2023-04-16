@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private int myPoint = 0;
+    [SerializeField]
+    private bool activeChance = false;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -81,6 +83,10 @@ public class Player : MonoBehaviour
 #if UNITY_STANDALONE_WIN
         if (Input.GetMouseButton(0) && GameManager.instance.shoot.GetCanActiveTime())
         {
+            if (!activeChance)
+            {
+                return;
+            }
 
             float mouseX = Input.mousePosition.x;
             float mouseY = Input.mousePosition.y;
@@ -97,6 +103,10 @@ public class Player : MonoBehaviour
 #elif UNITY_ANDROID
         if (Input.GetMouseButton(0) && GameManager.instance.shoot.GetCanActiveTime())
         {
+            if (!activeChance)
+            {
+                return;
+            }
 
             float mouseX = Input.mousePosition.x;
             float mouseY = Input.mousePosition.y;
@@ -116,5 +126,15 @@ public class Player : MonoBehaviour
     {
         Bullet = Bullets.childCount;
         GameManager.instance.UImanager.SetBallHowMuch(Bullet);
+    }
+
+    public void ActiveChance()
+    {
+        activeChance = true;
+    }
+
+    public void InActiveChance()
+    {
+        activeChance = false;
     }
 }
