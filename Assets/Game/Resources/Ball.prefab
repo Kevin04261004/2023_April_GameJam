@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 0
   Bullets: {fileID: 0}
+  Player: {fileID: 0}
   rigid: {fileID: 0}
 --- !u!96 &8232503174035325579
 TrailRenderer:

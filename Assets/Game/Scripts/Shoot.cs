@@ -8,6 +8,8 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private Transform Bullets;
     [SerializeField]
+    private GameObject Player;
+    [SerializeField]
     private float Speed;
     [SerializeField]
     private bool CantShootTime;
@@ -57,7 +59,7 @@ public class Shoot : MonoBehaviour
 
 
         timeDelay += Time.deltaTime;
-        if (timeDelay < 0.3f) return;
+        if (timeDelay < 0.1f) return;
         bool isMouse = Input.GetMouseButton(0);
         if (Input.mousePosition.y <= 400)// 플레이어 움직일때는 리턴, y가 일정 거리 아래로 내려가면 미리보여주는 라인렌더러 0으로 초기화.
         {
@@ -108,6 +110,7 @@ public class Shoot : MonoBehaviour
             }
         }
         CantShootTime = false;
+        Bullets.transform.position = Player.transform.position + new Vector3(0, Bullets.transform.position.y, 0);
         GameManager.instance.player.SetBulletToMaxBullet();
         GameManager.instance.spawnWave.TurnEnd();
     }

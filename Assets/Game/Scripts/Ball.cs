@@ -6,18 +6,20 @@ public class Ball : MonoBehaviour
 {
     public bool isMoving;
     public GameObject Bullets;
+    public GameObject Player;
     public Rigidbody2D rigid;
 
     private void OnEnable()
     {
         Bullets = GameObject.Find("Bullets(Gun)");
+        Player = GameObject.Find("Player");
         rigid = GetComponent<Rigidbody2D>();
     }
     public void Update()
     {
         if(!isMoving)
         {
-            gameObject.transform.position = Bullets.transform.position;
+            gameObject.transform.position = Player.transform.position + new Vector3(0,Bullets.transform.position.y,0);
         }
     }
     public void isMovingTrue()
@@ -52,7 +54,6 @@ public class Ball : MonoBehaviour
             }
 
             isMoving = false;
-            gameObject.transform.position = Bullets.transform.position;
             gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
