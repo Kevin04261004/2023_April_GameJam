@@ -3332,7 +3332,7 @@ MonoBehaviour:
   - {fileID: 1772670321030108734}
   - {fileID: 5499298171042445092}
   Turn: 0
-  data: {fileID: 4900000, guid: aeb246b3d0f185444a26e7fa0214b719, type: 3}
+  data: {fileID: 4900000, guid: c9fa221833dc4be458cf316b6cdf3164, type: 3}
   datas:
     Stage: []
   MaxTurn: 0

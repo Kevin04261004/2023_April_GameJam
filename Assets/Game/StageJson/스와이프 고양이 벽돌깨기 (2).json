@@ -1,0 +1,184 @@
+{
+  "Stage": [
+    {
+      "StageID": "1",
+      "Point0": "1",
+      "Point1": "1",
+      "Point2": "3",
+      "Point3": "1",
+      "Point4": "1",
+      "Point5": "1"
+    },
+    {
+      "StageID": "2",
+      "Point0": "1",
+      "Point1": null,
+      "Point2": null,
+      "Point3": "3",
+      "Point4": null,
+      "Point5": "1"
+    },
+    {
+      "StageID": "3",
+      "Point0": null,
+      "Point1": "3",
+      "Point2": null,
+      "Point3": null,
+      "Point4": "5",
+      "Point5": null
+    },
+    {
+      "StageID": "4",
+      "Point0": null,
+      "Point1": "1",
+      "Point2": null,
+      "Point3": "3",
+      "Point4": null,
+      "Point5": null
+    },
+    {
+      "StageID": "5",
+      "Point0": null,
+      "Point1": null,
+      "Point2": "3",
+      "Point3": null,
+      "Point4": "2",
+      "Point5": null
+    },
+    {
+      "StageID": "6",
+      "Point0": "3",
+      "Point1": null,
+      "Point2": "1",
+      "Point3": "5",
+      "Point4": null,
+      "Point5": "1"
+    },
+    {
+      "StageID": "7",
+      "Point0": null,
+      "Point1": "4",
+      "Point2": null,
+      "Point3": null,
+      "Point4": "3",
+      "Point5": null
+    },
+    {
+      "StageID": "8",
+      "Point0": "4",
+      "Point1": null,
+      "Point2": "1",
+      "Point3": "3",
+      "Point4": null,
+      "Point5": null
+    },
+    {
+      "StageID": "9",
+      "Point0": null,
+      "Point1": "3",
+      "Point2": null,
+      "Point3": null,
+      "Point4": "1",
+      "Point5": null
+    },
+    {
+      "StageID": "10",
+      "Point0": null,
+      "Point1": "3",
+      "Point2": "2",
+      "Point3": "5",
+      "Point4": null,
+      "Point5": "1"
+    },
+    {
+      "StageID": "11",
+      "Point0": "1",
+      "Point1": null,
+      "Point2": "3",
+      "Point3": null,
+      "Point4": null,
+      "Point5": "1"
+    },
+    {
+      "StageID": "12",
+      "Point0": "1",
+      "Point1": null,
+      "Point2": "3",
+      "Point3": null,
+      "Point4": "1",
+      "Point5": "1"
+    },
+    {
+      "StageID": "13",
+      "Point0": null,
+      "Point1": "5",
+      "Point2": null,
+      "Point3": "1",
+      "Point4": "3",
+      "Point5": "1"
+    },
+    {
+      "StageID": "14",
+      "Point0": "2",
+      "Point1": "1",
+      "Point2": null,
+      "Point3": "3",
+      "Point4": null,
+      "Point5": "1"
+    },
+    {
+      "StageID": "15",
+      "Point0": "3",
+      "Point1": null,
+      "Point2": null,
+      "Point3": null,
+      "Point4": "4",
+      "Point5": null
+    },
+    {
+      "StageID": "16",
+      "Point0": "1",
+      "Point1": null,
+      "Point2": "1",
+      "Point3": null,
+      "Point4": "3",
+      "Point5": "2"
+    },
+    {
+      "StageID": "17",
+      "Point0": "1",
+      "Point1": null,
+      "Point2": null,
+      "Point3": "2",
+      "Point4": null,
+      "Point5": "3"
+    },
+    {
+      "StageID": "18",
+      "Point0": null,
+      "Point1": "1",
+      "Point2": "2",
+      "Point3": "4",
+      "Point4": "3",
+      "Point5": null
+    },
+    {
+      "StageID": "19",
+      "Point0": null,
+      "Point1": "1",
+      "Point2": null,
+      "Point3": "3",
+      "Point4": null,
+      "Point5": "1"
+    },
+    {
+      "StageID": "20",
+      "Point0": null,
+      "Point1": "1",
+      "Point2": "4",
+      "Point3": null,
+      "Point4": "3",
+      "Point5": null
+    }
+  ]
+}
