@@ -595,12 +595,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ead5b70fc9f349849910738013462293, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da3aeece2614f8c468815819f2a80ea2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -623,8 +623,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -673,10 +673,11 @@ MonoBehaviour:
   isSkillActive: 0
   image: {fileID: 0}
   BaseSprite: {fileID: 21300000, guid: 93938aa43d691974f9c85939ab999d6a, type: 3}
-  RealSprite: {fileID: 21300000, guid: ead5b70fc9f349849910738013462293, type: 3}
+  RealSprite: {fileID: 21300000, guid: da3aeece2614f8c468815819f2a80ea2, type: 3}
   HpBar: {fileID: 2835931424084948717}
   Hp_TMP: {fileID: 5953326109172222585}
   Turn_TMP: {fileID: 6631334938326933971}
+  BombSkill_Image: {fileID: 0}
   Turn_Image: {fileID: 1090868820909281491}
   damage: 1
 --- !u!1 &4191952030856291343

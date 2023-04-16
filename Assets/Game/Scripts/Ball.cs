@@ -41,7 +41,7 @@ public class Ball : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("End") && isMoving)
+        if (collision.gameObject.CompareTag("End") && isMoving)
         {
             if (GameManager.instance.shoot.isEnd == false)
             {
