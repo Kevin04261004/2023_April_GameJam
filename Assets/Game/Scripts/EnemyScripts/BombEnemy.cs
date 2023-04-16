@@ -13,6 +13,7 @@ public class BombEnemy : Enemy
         CurCoolTime = CoolTime;
         gameObject.GetComponent<SpriteRenderer>().sprite = RealSprite;
         Turn_Image.gameObject.SetActive(true);
+        BombSkill_Image.gameObject.SetActive(true);
         SetHpBarAndHp_TMP();
         SetTurn_TMP();
     }
@@ -22,7 +23,12 @@ public class BombEnemy : Enemy
         if (isSkillActive)
         {
             // 파괴 벽돌은 파괴 될때, 주변의 벽돌들이 사라집니다. << 나중에 상세 기획보면 될듯.
-            collider2Ds = Physics2D.OverlapCircleAll(gameObject.transform.position, 1f, LayerMask.GetMask("Enemy"));
+            collider2Ds = Physics2D.OverlapBoxAll(gameObject.transform.position, new Vector2(0.4f, 1), 0);
+            for (int i = 0; i < collider2Ds.Length; i++)
+            {
+                collider2Ds[i].gameObject.GetComponent<Enemy>().Died();
+            }
+            collider2Ds = Physics2D.OverlapBoxAll(gameObject.transform.position, new Vector2(1, 0.4f), 0);
             for (int i = 0; i < collider2Ds.Length; i++)
             {
                 collider2Ds[i].gameObject.GetComponent<Enemy>().Died();

@@ -76,6 +76,6 @@ public class SpawnWave : MonoBehaviour
             }
             
         }
-        GameManager.instance.pathFind.StartFinding();
+        //GameManager.instance.pathFind.StartFinding();
     }
 }

@@ -31,10 +31,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected TextMeshProUGUI Turn_TMP;
     [SerializeField]
+    protected Image BombSkill_Image;
+    [SerializeField]
     protected Image Turn_Image;
     private void OnEnable()
     {
-
         ThisVec2 = gameObject.transform.position;
         Hp = GameManager.instance.spawnWave.Turn;
         MaxHp = Hp;
@@ -44,7 +45,10 @@ public class Enemy : MonoBehaviour
         SetTurn_TMP();
         Turn_Image.gameObject.SetActive(false);
     }
-
+    public int GetMaxHp()
+    {
+        return MaxHp;
+    }
     public void HpDown(int _HowMuch =1)
     {
         Hp -= _HowMuch;
@@ -68,6 +72,10 @@ public class Enemy : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = BaseSprite;
             Turn_Image.gameObject.SetActive(false);
+            if(BombSkill_Image != null)
+            {
+                BombSkill_Image.gameObject.SetActive(false);
+            }
             isSkillActive = false;
             return;
         }
@@ -76,6 +84,10 @@ public class Enemy : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = BaseSprite;
             Turn_Image.gameObject.SetActive(false);
+            if (BombSkill_Image != null)
+            {
+                BombSkill_Image.gameObject.SetActive(false);
+            }
             isSkillActive = false;
         }
         SetTurn_TMP();

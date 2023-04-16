@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
     public bool isMoving;
     public GameObject Bullets;
     public Rigidbody2D rigid;
+
     private void OnEnable()
     {
         Bullets = GameObject.Find("Bullets(Gun)");
