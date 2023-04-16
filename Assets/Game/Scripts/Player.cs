@@ -95,8 +95,11 @@ public class Player : MonoBehaviour
             foreach (Collider2D col in Physics2D.OverlapBoxAll(point, new Vector2(0.2f, 0.2f),0))
                 if (col.gameObject == this.gameObject)
                 {
-                    if (point.x > -5.25 && point.x < 0) 
-                        col.gameObject.transform.position = new Vector3(point.x,gameObject.transform.position.y,0);
+                    if (point.x > -5.25 && point.x < 0)
+                    {
+                        col.gameObject.transform.position = new Vector3(point.x, gameObject.transform.position.y, 0);
+                        Bullets.transform.position = gameObject.transform.position + new Vector3(0, Bullets.transform.position.y, 0);
+                    }
                 }
 
         }
@@ -116,9 +119,11 @@ public class Player : MonoBehaviour
                 if (col.gameObject == this.gameObject)
                 {
                     if (point.x > -5.25 && point.x < 0)
+                    {
                         col.gameObject.transform.position = new Vector3(point.x, gameObject.transform.position.y, 0);
+                        Bullets.transform.position = gameObject.transform.position + new Vector3(0, Bullets.transform.position.y, 0);
+                    }
                 }
-
         }
 #endif
     }
