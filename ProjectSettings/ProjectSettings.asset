@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: CK_Projector_C
   productName: "\uBC2D \uC950\uD0A4\uAE30 : \uD584\uCC0C \uD30C\uC218\uAFBC"
-  defaultCursor: {fileID: 2800000, guid: 93938aa43d691974f9c85939ab999d6a, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -241,7 +241,7 @@ PlayerSettings:
   templatePackageId: 
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 0
-  useCustomLauncherManifest: 0
+  useCustomLauncherManifest: 1
   useCustomMainGradleTemplate: 0
   useCustomLauncherGradleManifest: 0
   useCustomBaseGradleTemplate: 0
@@ -275,7 +275,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 93938aa43d691974f9c85939ab999d6a, type: 3}
+      m_Icon: {fileID: 2800000, guid: 32b4febd1385cce42bf78e7a76755898, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
