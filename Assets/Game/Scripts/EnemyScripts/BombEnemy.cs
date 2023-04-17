@@ -26,12 +26,18 @@ public class BombEnemy : Enemy
             collider2Ds = Physics2D.OverlapBoxAll(gameObject.transform.position, new Vector2(0.4f, 1), 0);
             for (int i = 0; i < collider2Ds.Length; i++)
             {
-                collider2Ds[i].gameObject.GetComponent<Enemy>().Died();
+                if (collider2Ds[i].gameObject.CompareTag("Enemy"))
+                {
+                    collider2Ds[i].gameObject.GetComponent<Enemy>().Died();
+                }
             }
             collider2Ds = Physics2D.OverlapBoxAll(gameObject.transform.position, new Vector2(1, 0.4f), 0);
             for (int i = 0; i < collider2Ds.Length; i++)
             {
-                collider2Ds[i].gameObject.GetComponent<Enemy>().Died();
+                if (collider2Ds[i].gameObject.CompareTag("Enemy"))
+                {
+                    collider2Ds[i].gameObject.GetComponent<Enemy>().Died();
+                }
             }
         }
     }
