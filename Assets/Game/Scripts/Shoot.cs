@@ -90,9 +90,13 @@ public class Shoot : MonoBehaviour
             ballPreview.transform.position = (Vector3)hit.point - gap * 0.25f;
             ballLineRenderer.SetPosition(1, (Vector3)hit.point - gap * 0.25f);
         }
-
         if (Input.GetMouseButtonUp(0))
         {
+            if ((secondPos - firstPos).magnitude < 1)
+            {
+                return;
+            }
+            Debug.Log(isMouse);
             StartCoroutine(ShootAllBalls());
 
             ballLineRenderer.SetPosition(0, Vector3.zero);
