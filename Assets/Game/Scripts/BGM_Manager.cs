@@ -16,10 +16,12 @@ public class BGM_Manager : MonoBehaviour
     private void Awake()
     {
         BGMPlay();
+        BGMSlider.value = DontDestroyManager.instance.tempBGMSound;
     }
     private void Update()
     {
-        audioSource.volume = BGMSlider.value;
+        DontDestroyManager.instance.tempBGMSound = BGMSlider.value;
+        audioSource.volume = DontDestroyManager.instance.tempBGMSound;
     }
     public void BGMPlay()
     {

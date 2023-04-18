@@ -14,9 +14,15 @@ public class EffectSoundManager : MonoBehaviour
     [SerializeField]
     private Slider EffectSoundSlider;
 
+    private void Awake()
+    {
+        EffectSoundSlider.value = DontDestroyManager.instance.tempEffectSound;
+    }
+
     private void Update()
     {
-        audioSource.volume = EffectSoundSlider.value;
+        DontDestroyManager.instance.tempEffectSound = EffectSoundSlider.value;
+        audioSource.volume = DontDestroyManager.instance.tempEffectSound;
     }
     public void PopPlay()
     {
