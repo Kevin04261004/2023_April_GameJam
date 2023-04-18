@@ -798,7 +798,7 @@ MonoBehaviour:
   MaxHp: 0
   Hp: 0
   CurCoolTime: 0
-  CoolTime: 3
+  CoolTime: 6
   ThisVec2: {x: 0, y: 0}
   isSkillActive: 0
   image: {fileID: 0}

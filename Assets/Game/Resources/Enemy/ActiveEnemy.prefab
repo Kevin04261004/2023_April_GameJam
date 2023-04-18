@@ -995,7 +995,7 @@ MonoBehaviour:
   MaxHp: 0
   Hp: 0
   CurCoolTime: 0
-  CoolTime: 3
+  CoolTime: 6
   ThisVec2: {x: 0, y: 0}
   isSkillActive: 0
   image: {fileID: 0}
@@ -1004,4 +1004,5 @@ MonoBehaviour:
   HpBar: {fileID: 655057601062825632}
   Hp_TMP: {fileID: 2713646579150468474}
   Turn_TMP: {fileID: 7060220907897264344}
+  BombSkill_Image: {fileID: 0}
   Turn_Image: {fileID: 1474114503361679712}
