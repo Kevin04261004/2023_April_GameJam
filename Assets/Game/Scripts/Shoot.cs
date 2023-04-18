@@ -96,7 +96,6 @@ public class Shoot : MonoBehaviour
             {
                 return;
             }
-            Debug.Log(isMouse);
             StartCoroutine(ShootAllBalls());
 
             ballLineRenderer.SetPosition(0, Vector3.zero);
@@ -160,6 +159,10 @@ public class Shoot : MonoBehaviour
 
                 if (touch.phase == TouchPhase.Ended)
                 {
+                    if ((secondPos - firstPos).magnitude < 1)
+                    {
+                        return;
+                    }
                     StartCoroutine(ShootAllBalls());
 
                     ballLineRenderer.SetPosition(0, Vector3.zero);

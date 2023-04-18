@@ -54,8 +54,8 @@ public class Ball : MonoBehaviour
             }
 
             isMoving = false;
-            gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
