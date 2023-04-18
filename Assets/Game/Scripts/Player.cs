@@ -104,26 +104,34 @@ public class Player : MonoBehaviour
 
         }
 #elif UNITY_ANDROID
-        if (Input.GetMouseButton(0) && GameManager.instance.shoot.GetCanActiveTime())
+        if(Input.touchCount > 0)
         {
-            if (!activeChance)
+            for(int i = 0; i< Input.touchCount; ++i)
             {
-                return;
-            }
-
-            float mouseX = Input.mousePosition.x;
-            float mouseY = Input.mousePosition.y;
-
-            Vector2 point = Camera.main.ScreenToWorldPoint(new Vector2(mouseX, mouseY));
-            foreach (Collider2D col in Physics2D.OverlapBoxAll(point, new Vector2(0.2f, 0.2f), 0))
-                if (col.gameObject == this.gameObject)
+                Touch touch = Input.GetTouch(i);
+                int index = touch.fingerId;
+                Vector2 position = touch.position;
+                TouchPhase phase = touch.phase;
+                if (phase == TouchPhase.Moved && GameManager.instance.shoot.GetCanActiveTime())
                 {
-                    if (point.x > -5.25 && point.x < 0)
+                    if (!activeChance)
                     {
-                        col.gameObject.transform.position = new Vector3(point.x, gameObject.transform.position.y, 0);
-                        Bullets.transform.position = gameObject.transform.position + new Vector3(0, Bullets.transform.position.y, 0);
+                        return;
                     }
+
+                    Vector2 point = Camera.main.ScreenToWorldPoint(position);
+                    print(point);
+                    foreach (Collider2D col in Physics2D.OverlapBoxAll(point, new Vector2(0.2f, 0.2f), 0))
+                        if (col.gameObject == this.gameObject)
+                        {
+                            if (point.x > -5.25 && point.x < 0)
+                            {
+                                col.gameObject.transform.position = new Vector3(point.x, gameObject.transform.position.y, 0);
+                                Bullets.transform.position = gameObject.transform.position + new Vector3(0, Bullets.transform.position.y, 0);
+                            }
+                        }
                 }
+            }
         }
 #endif
     }
