@@ -49,9 +49,8 @@ public class SpawnWave : MonoBehaviour
         UnityWebRequest www = UnityWebRequest.Get(URL);
         yield return www.SendWebRequest();
 
-        string data = www.downloadHandler.text;
-        print(data);
-        SetStage(data);
+        string dataStr = www.downloadHandler.text;
+        SetStage(dataStr);
     }
     void SetStage(string tsv)
     {
@@ -62,6 +61,13 @@ public class SpawnWave : MonoBehaviour
         {
             string[] column = row[i].Split('\t');
             datas.Stage[i] = new StageData();
+            for(int j = 0; j< column.Length;j++)
+            {
+                if (column[j] == "")
+                {
+                    column[j] = "0";
+                }
+            }
             datas.Stage[i].StageID = int.Parse(column[0]);
             datas.Stage[i].Point0 = int.Parse(column[1]);
             datas.Stage[i].Point1 = int.Parse(column[2]);
