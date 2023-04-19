@@ -33,8 +33,8 @@ public class SpawnWave : MonoBehaviour
     public AllData datas;
     public int MaxTurn;
     public int[] SpawnEnemy;
-    const string URL = "https://docs.google.com/spreadsheets/d/1EJ_m0wSLycdbVwiPNuk1MlLEsXF9vzeDUIBkZ_vKwTI/export?format=tsv&range=A2:G";//&gid를 추가하여, 다른 시트도 추가할 수 있다.
-
+    const string URL = "https://docs.google.com/spreadsheets/d/12rpg-XuAHhlNjKrv5Zk7Z9-AALpmEPmEO9yLFhvWAuc/export?format=tsv&range=A2:G";//&gid를 추가하여, 다른 시트도 추가할 수 있다.
+    
     private void Start()
     {
         StartCoroutine(ReadSCV());
