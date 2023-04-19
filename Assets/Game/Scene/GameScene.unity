@@ -261,6 +261,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15293026}
   m_CullTransparentMesh: 1
+--- !u!1 &30241538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30241539}
+  - component: {fileID: 30241540}
+  m_Layer: 0
+  m_Name: GoogleSheetManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &30241539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30241538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 753529291}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &30241540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30241538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093bfa2f606e44645bf63ca70a9f6832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &52839326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,6 +2936,7 @@ Transform:
   - {fileID: 209450545}
   - {fileID: 1016338005}
   - {fileID: 1077121435}
+  - {fileID: 30241539}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3986,7 +4031,7 @@ MonoBehaviour:
   - {fileID: 1772670321030108734}
   - {fileID: 5499298171042445092}
   Turn: 0
-  data: {fileID: 4900000, guid: 427e45dbf40dff444991e6867f4ebf58, type: 3}
+  data: {fileID: 4900000, guid: 2b40cb628025a2749863b5adf976d48f, type: 3}
   datas:
     Stage: []
   MaxTurn: 0

@@ -1,23 +1,28 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [System.Serializable]
 public class AllData
 {
     public StageData[] Stage;
+    public AllData(int length)
+    {
+        Stage = new StageData[length];
+    }
 }
 [System.Serializable]
 public class StageData
 {
+    public int StageID;
     public int Point0;
     public int Point1;
     public int Point2;
     public int Point3;
     public int Point4;
     public int Point5;
-    public int StageID;
 }
 public class SpawnWave : MonoBehaviour
 {
@@ -28,16 +33,45 @@ public class SpawnWave : MonoBehaviour
     public AllData datas;
     public int MaxTurn;
     public int[] SpawnEnemy;
-    private void Awake()
-    {
-        datas = JsonUtility.FromJson<AllData>(data.text); // json 읽어들이기
-    }
+    const string URL = "https://docs.google.com/spreadsheets/d/1EJ_m0wSLycdbVwiPNuk1MlLEsXF9vzeDUIBkZ_vKwTI/export?format=tsv&range=A2:G";//&gid를 추가하여, 다른 시트도 추가할 수 있다.
+
     private void Start()
     {
+        StartCoroutine(ReadSCV());
+
         GameManager.instance.objectpool.Get(1, point[0]);
         SpawnEnemy = new int[6];
         Turn = 0;
-        MaxTurn = datas.Stage.Length;
+    }
+
+    IEnumerator ReadSCV()
+    {
+        UnityWebRequest www = UnityWebRequest.Get(URL);
+        yield return www.SendWebRequest();
+
+        string data = www.downloadHandler.text;
+        print(data);
+        SetStage(data);
+    }
+    void SetStage(string tsv)
+    {
+        string[] row = tsv.Split('\n');
+        MaxTurn = row.Length;
+        datas = new AllData(MaxTurn);
+        for (int i = 0; i < MaxTurn; i++)
+        {
+            string[] column = row[i].Split('\t');
+            datas.Stage[i] = new StageData();
+            datas.Stage[i].StageID = int.Parse(column[0]);
+            datas.Stage[i].Point0 = int.Parse(column[1]);
+            datas.Stage[i].Point1 = int.Parse(column[2]);
+            datas.Stage[i].Point2 = int.Parse(column[3]);
+            datas.Stage[i].Point3 = int.Parse(column[4]);
+            datas.Stage[i].Point4 = int.Parse(column[5]);
+            datas.Stage[i].Point5 = int.Parse(column[6]);
+
+        }
+
     }
     public int GetTurn()
     {
@@ -58,7 +92,6 @@ public class SpawnWave : MonoBehaviour
             return;
         }
         Turn++;
-        // json stage에 따라 읽어들이기
         
         SpawnEnemy[0] = datas.Stage[Turn - 1].Point0;
         SpawnEnemy[1] = datas.Stage[Turn - 1].Point1;
